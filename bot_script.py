@@ -8,9 +8,13 @@ CHANNEL_ID = 1001910479831  # Replace with your channel's username
 def main():
     bot = Bot(token=TOKEN)
     while True:
-        new_invite_link = bot.export_chat_invite_link(CHANNEL_ID)
-        bot.send_message(chat_id=CHANNEL_ID, text=f"New link: {new_invite_link}")
-        time.sleep(300)  # Wait for 5 minutes
+        try:
+            new_invite_link = bot.export_chat_invite_link(chat_id=CHANNEL_USERNAME)
+            print(f"New link: {new_invite_link}")
+            time.sleep(300)  # Wait for 5 minutes
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            time.sleep(60)  # Wait for 1 minute before retrying
 
 if __name__ == '__main__':
     main()

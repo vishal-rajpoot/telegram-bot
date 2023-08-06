@@ -2,7 +2,7 @@ name: Auto Change Channel Link
 
 on:
    schedule:
-    - cron: '*/5 * * * *'  # Run every 5 minutes
+    - cron: '*/2 * * * *'  # Run every 5 minutes
 
 jobs:
   build:

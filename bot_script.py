@@ -9,7 +9,7 @@ def main():
     bot = Bot(token=TOKEN)
     while True:
         try:
-            new_invite_link = bot.export_chat_invite_link(chat_id=CHANNEL_USERNAME)
+            new_invite_link = bot.export_chat_invite_link(chat_id=CHANNEL_ID)
             print(f"New link: {new_invite_link}")
             time.sleep(300)  # Wait for 5 minutes
         except Exception as e:
